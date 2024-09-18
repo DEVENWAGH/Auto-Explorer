@@ -63,7 +63,7 @@ const CarSchema: Schema<ICar> = new Schema(
       required: true,
     },
   },
-  { timestamps: true } // Enable timestamps
+  { timestamps: true }
 );
 
 const CarModel = mongoose.models.Car || mongoose.model<ICar>("Car", CarSchema);

@@ -8,7 +8,6 @@ export interface IBike extends Document {
   images: string[];
   exShowroomPrice: number;
   onRoadPrice: number;
-  displacement: number;
   engineType: string;
   fuelType: string;
   createdAt: Date;
@@ -45,10 +44,6 @@ const BikeSchema: Schema<IBike> = new Schema(
       type: Number,
       required: true,
     },
-    displacement: {
-      type: Number,
-      required: true,
-    },
     engineType: {
       type: String,
       required: true,
@@ -58,7 +53,7 @@ const BikeSchema: Schema<IBike> = new Schema(
       required: true,
     },
   },
-  { timestamps: true } // Enable timestamps
+  { timestamps: true }
 );
 
 const BikeModel =

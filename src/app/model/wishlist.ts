@@ -3,7 +3,7 @@ import mongoose, { Schema, Document } from "mongoose";
 export interface Wishlist extends Document {
   userId: mongoose.Types.ObjectId;
   vehicleId: mongoose.Types.ObjectId;
-  addedAt: Date;
+  createdAt: Date;
   updatedAt: Date;
 }
 
@@ -17,16 +17,10 @@ const WishlistSchema: Schema<Wishlist> = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Vehicle",
     required: true,
-  },
-  addedAt: {
-    type: Date,
-    default: Date.now,
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  }
+},
+  { timestamps: true }
+);
 
 const WishlistModel = mongoose.models.Wishlist || mongoose.model<Wishlist>("Wishlist", WishlistSchema);
 export default WishlistModel;

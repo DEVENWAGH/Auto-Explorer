@@ -32,16 +32,10 @@ const ReviewSchema: Schema<Review> = new Schema({
   status: {
     type: String,
     default: "active",
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  }
+},
+  { timestamps: true }
+);
 
 const ReviewModel = mongoose.models.Review || mongoose.model<Review>("Review", ReviewSchema);
 export default ReviewModel;

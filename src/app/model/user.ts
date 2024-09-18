@@ -9,8 +9,8 @@ export interface User extends Document {
   verifyCodeExpiry: Date;
   isVerified: boolean;
   city: string;
-  creationDate: Date;
-  modificationDate: Date;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 const UserSchema: Schema<User> = new mongoose.Schema(
@@ -54,7 +54,7 @@ const UserSchema: Schema<User> = new mongoose.Schema(
     },
   },
   {
-    timestamps: { createdAt: "creationDate", updatedAt: "modificationDate" },
+    timestamps: true,
   }
 );
 
