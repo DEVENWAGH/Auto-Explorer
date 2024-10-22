@@ -22,16 +22,12 @@ const CommentSchema: Schema<Comment> = new Schema({
   content: {
     type: String,
     required: true,
+  }
+},
+  {
+    timestamps: true,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+);
 
 const CommentModel = mongoose.models.Comment || mongoose.model<Comment>("Comment", CommentSchema);
 export default CommentModel;

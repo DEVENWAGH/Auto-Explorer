@@ -20,16 +20,12 @@ const DealershipSchema: Schema<Dealership> = new Schema({
   vehicleBrand: {
     type: String,
     required: true,
+  }
+},
+  {
+    timestamps: true,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+);
 
 const DealershipModel = mongoose.models.Dealership || mongoose.model<Dealership>("Dealership", DealershipSchema);
 export default DealershipModel;
